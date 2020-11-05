@@ -1,0 +1,31 @@
+{
+  "name": "gopro-utils",
+  "version": "0.0.1",
+  "description": "Extract metadata from GoPro videos",
+  "main": "gpmd-extract.js",
+  "dependencies": {
+    "cliparse": "^0.3.1",
+    "command-line-args": "^5.1.1",
+    "gopro-telemetry": "^1.1.29",
+    "gpmf-extract": "^0.1.21"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/willprice/gopro-utils.git"
+  },
+  "keywords": [
+    "gopro",
+    "metadata",
+    "gpmd"
+  ],
+  "author": "Will Price",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/willprice/gopro-utils/issues"
+  },
+  "homepage": "https://github.com/willprice/gopro-utils#readme"
+}
