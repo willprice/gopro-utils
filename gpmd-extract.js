@@ -6,6 +6,7 @@ const gpmfExtract = require('gpmf-extract')
 const goproTelemetry = require('gopro-telemetry')
 const fs = require('fs').promises
 const { createReadStream } = require('fs')
+const package = require('./package.json')
 
 
 /**
@@ -53,7 +54,7 @@ async function extract(params) {
 const cliParser = cliparse.cli({
   name: 'gpmd-extract',
   description: 'Extract embedded metadata from GoPro videos',
-  version: 'v0.0.1',
+  version: package.version,
   args: [
     cliparse.argument("video", { description: "Path to video file from which to extract metdata" }) ,
     cliparse.argument("json", { description: "Path to JSON file to store metadata" }) ,
