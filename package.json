@@ -1,6 +1,6 @@
 {
   "name": "gopro-utils",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Extract metadata from GoPro videos",
   "main": "gpmd-extract.js",
   "dependencies": {
