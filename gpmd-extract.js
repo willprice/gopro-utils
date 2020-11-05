@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const cliparse = require('cliparse')
 const parsers = cliparse.parsers;
 const gpmfExtract = require('gpmf-extract')
