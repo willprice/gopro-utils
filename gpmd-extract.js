@@ -5,7 +5,8 @@ const goproTelemetry = require('gopro-telemetry')
 const fs = require('fs').promises
 const { createReadStream } = require('fs')
 
-/** 
+
+/**
  * @param {*} path The path to video file
  * @param {*} chunkSize As of August 9, 2020, there is a problem with mp4box.js, 
  * so please specify a sufficiently large chunksize for the file size.
@@ -42,13 +43,9 @@ async function extract(params) {
     process.exit(2)
   }
 
-  gpmfExtract(bufferAppender(videoPath, 10 * 1024 * 10240))
-    .then(result => result)
-    .then(result => goproTelemetry(result))
-    .then(result => {
-      fs.writeFile(jsonPath, JSON.stringify(result))
-    })
-
+  const result = await gpmfExtract(bufferAppender(videoPath, 10 * 1024 * 10240))
+  const telemetry = await goproTelemetry(result)
+  await fs.writeFile(jsonPath, JSON.stringify(telemetry))
 }
 
 const cliParser = cliparse.cli({
@@ -65,15 +62,3 @@ const cliParser = cliparse.cli({
 }, extract)
 
 cliparse.parse(cliParser)
-
-
-//const file = fs.readFileSync('/home/will/GX021219-meta.bin')
-//gpmfExtract(bufferAppender('/home/will/GX021219.MP4', 10 * 1024 * 10240))
-////gpmfExtract(file)
-//  .then(result => result)
-//  .then(result => goproTelemetry(result))
-//  .then(result => {
-//    console.log(result)
-//    console.log(result['1'].streams['ACCL'])
-//  })
-//  .catch((err) => { console.log(err) })
