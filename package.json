@@ -1,16 +1,16 @@
 {
   "name": "gopro-utils",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Extract metadata from GoPro videos",
   "main": "gpmd-extract.js",
   "dependencies": {
     "cliparse": "^0.3.1",
     "gopro-telemetry": "^1.1.35",
-    "gpmf-extract": "^0.1.22"
+    "gpmf-extract": "0.1.21"
   },
   "devDependencies": {},
   "bin": {
-      "gpmd-extract": "./gpmd-extract.js"
+    "gpmd-extract": "./gpmd-extract.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
